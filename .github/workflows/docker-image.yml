@@ -30,8 +30,8 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build \
-            -t ghcr.io/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }} .
-            t ghcr.io/anup289/imagetesting/myapp:latest .
+            -t ghcr.io/anup289/imagetesting/myapp:${{ github.sha }} \
+            -t ghcr.io/anup289/imagetesting/myapp:latest .
 
       - name: Push Docker Image
         run: |
